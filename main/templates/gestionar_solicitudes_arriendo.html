@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">Gestionar Solicitudes de Arriendo</h1>
+
+    {% if solicitudes %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Inmueble</th>
+                    <th scope="col">Arrendatario</th>
+                    <th scope="col">Fecha de Solicitud</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for solicitud in solicitudes %}
+                    <tr>
+                        <td>{{ solicitud.inmueble.nombre }}</td>
+                        <td>{{ solicitud.arrendatario.user.get_full_name }}</td>
+                        <td>{{ solicitud.fecha_solicitud|date:"d M Y H:i" }}</td>
+                        <td>
+                            {% if solicitud.estado_solicitud == 'aceptada' %}
+                                <span class="badge bg-success">{{ solicitud.get_estado_solicitud_display }}</span>
+                            {% elif solicitud.estado_solicitud == 'rechazada' %}
+                                <span class="badge bg-danger">{{ solicitud.get_estado_solicitud_display }}</span>
+                            {% else %}
+                                <span class="badge bg-secondary">{{ solicitud.get_estado_solicitud_display }}</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if solicitud.estado_solicitud == 'pendiente' %}
+                                <form method="post" style="display:inline;">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="solicitud_id" value="{{ solicitud.id }}">
+                                    <button type="submit" name="accion" value="aceptar" class="btn btn-success btn-sm">Aceptar</button>
+                                    <button type="submit" name="accion" value="rechazar" class="btn btn-danger btn-sm">Rechazar</button>
+                                </form>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No hay solicitudes de arriendo pendientes.</p>
+    {% endif %}
+</div>
+{% endblock %}

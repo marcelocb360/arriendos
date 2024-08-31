@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="mb-4">Mis Solicitudes de Arriendo</h1>
+
+    {% if solicitudes %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Inmueble</th>
+                    <th scope="col">Fecha de Solicitud</th>
+                    <th scope="col">Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for solicitud in solicitudes %}
+                    <tr>
+                        <td>{{ solicitud.inmueble.nombre }}</td>
+                        <td>{{ solicitud.fecha_solicitud|date:"d M Y H:i" }}</td>
+                        <td>{{ solicitud.get_estado_solicitud_display }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No tienes solicitudes de arriendo.</p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Arriendo</title>
+</head>
+<body>
+
+    {% extends 'base.html' %}
+
+    {% block content %}
+
+    <div class="container">
+
+    <h1>Solicitar Arriendo</h1>
+    <p>Estás a punto de solicitar el arriendo del siguiente inmueble:</p>
+    <h2>{{ inmueble.nombre }}</h2>
+    <p>{{ inmueble.descripcion }}</p>
+    <p><strong>Precio mensual:</strong> {{ inmueble.precio_mensual_arriendo }} CLP</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirmar Solicitud</button>
+    </form>
+    
+    <a href="{% url 'details_propiedad' inmueble.id %}">Cancelar</a>
+    <div>
+    
+{% endblock %}
+</body>
+</html>

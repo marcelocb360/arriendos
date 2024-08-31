@@ -1,0 +1,20 @@
+Nombre: Casa Acogedora || Descripción: Amplia casa con jardÃ­n || Región: De Tarapacá
+Nombre: Departamento Moderno || Descripción: Departamento cÃ©ntrico con vista al mar || Región: De Atacama
+Nombre: Casa de Playa || Descripción: Casa frente al mar || Región: De Coquimbo
+Nombre: Loft Urbano || Descripción: Loft en el corazÃ³n de la ciudad || Región: De Coquimbo
+Nombre: Apartamento Elegante || Descripción: Apartamento con acabados de lujo || Región: De Valparaíso
+Nombre: Apartamento Minimalista || Descripción: Apartamento con diseÃ±o minimalista || Región: De Valparaíso
+Nombre: Casa Familiar || Descripción: Amplia casa para toda la familia || Región: De Valparaíso
+Nombre: Estudio Acogedor || Descripción: Estudio ideal para solteros || Región: De Valparaíso
+Nombre: Penthouse con Vistas || Descripción: Penthouse con terraza panorÃ¡mica || Región: De Valparaíso
+Nombre: Casa RÃºstica || Descripción: Casa de campo con chimenea || Región: De Valparaíso
+Nombre: Casa Tranquila || Descripción: Casa en zona residencial || Región: Del Libertador B. O'Higgins
+Nombre: Departamento CÃ©ntrico || Descripción: Departamento cerca de comercios || Región: Del Libertador B. O'Higgins
+Nombre: Casa de Campo || Descripción: Casa con amplio terreno || Región: Del Maule
+Nombre: Loft Industrial || Descripción: Loft con estilo industrial || Región: Del Maule
+Nombre: Apartamento Luminoso || Descripción: Apartamento con mucha luz natural || Región: Del Maule
+Nombre: Casa Moderna || Descripción: Casa minimalista con piscina || Región: Del Bíobío
+Nombre: Penthouse de Lujo || Descripción: Penthouse con vistas panorÃ¡micas || Región: Del Bíobío
+Nombre: Estudio Urbano || Descripción: Estudio en el corazÃ³n de la ciudad || Región: De La Araucanía
+Nombre: Casa Familiar Grande || Descripción: Casa espaciosa para toda la familia || Región: De La Araucanía
+Nombre: Apartamento Elegante II || Descripción: Apartamento con acabados de lujo || Región: De Los Lagos

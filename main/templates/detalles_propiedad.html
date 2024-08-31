@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load filtros %}
+{% block content %}
+<div class="container">
+  <div class="card" style="width: 18rem;">
+    <img src=
+    "
+    {% if not propiedad.imagen.img_file.url %}
+    {% static 'img/casa_ejemplo.webp' %}
+    {% else %}
+    {{ propiedad.imagen.img_file.url }}
+    {% endif %}
+    "
+    class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ propiedad.nombre }}</h5>
+      <p class="card-text">{{ propiedad.descripcion }}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">m2 construidos: {{ propiedad.m2_construidos}}</li>
+      <li class="list-group-item">m2 totales: {{ propiedad.m2_totales}}</li>
+      <li class="list-group-item">estacionamientos:{{ propiedad.num_estacionamientos}}</li>
+      <li class="list-group-item">habitaciones:{{ propiedad.num_habitaciones}}</li>
+      <li class="list-group-item">baños:{{ propiedad.num_banos}}</li>
+    
+      <li class="list-group-item fw-medium">{{ propiedad.comuna.nombre }}</li>
+      <li class="list-group-item">{{ propiedad.tipo_de_inmueble}}</li>
+      <li class="list-group-item">mensual $ {{ propiedad.precio_mensual_arriendo }}</li>
+      <li class="list-group-item">{{ propiedad.direccion}}</li>
+      <li class="list-group-item">$ {{ propiedad.precio_mensual_arriendo | format_number }}</li>
+    </ul>
+    <div class="card-body">
+      <a href="{% url 'crear_solicitud_arriendo' inmueble_id=propiedad.id %}" class="btn btn-sm btn-success my-3">Arrendar</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
